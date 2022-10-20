@@ -1,6 +1,5 @@
 from deeppavlov import build_model, train_model
 
-
 model = train_model('./copy.json')
 
 model = build_model('./copy.json')
