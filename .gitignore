@@ -167,3 +167,5 @@ cython_debug/
 .vscode/
 *.lock
 models/
+deeppavlov_tg.py
+NewQuestions.csv
