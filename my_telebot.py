@@ -50,7 +50,7 @@ async def model_handler(message: types.Message):
     con.commit()
     print('"' + message.text + '","' + result[0][0] + '"')
     print("saved")
-    if result[1][0] <= 0.1:
+    if result[1][0] < 0.04:
         await message.answer("Уточните вопрос")
     else:
         await message.answer(result[0][0])

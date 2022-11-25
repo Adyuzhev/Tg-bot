@@ -1,2 +1,4 @@
 deeppavlov
 aiogram
+flask
+sqlite
