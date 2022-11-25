@@ -13,7 +13,8 @@ cur.execute("DROP TABLE IF EXISTS questions")
 sql ='''CREATE TABLE "questions" (
 	"id"	INTEGER PRIMARY KEY AUTOINCREMENT,
 	"question"	TEXT,
-	"answer"	TEXT
+	"answer"	TEXT,
+	"score"	FLOAT
 )'''
 cur.execute(sql)
 

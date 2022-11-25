@@ -40,13 +40,13 @@ async def help_handler(message: types.Message):
 @dp.message_handler()
 async def model_handler(message: types.Message):
     result = model([message.text])
-    question_writer.debug('"' + message.text + '","' + result[0][0] + '"')
+    question_writer.debug('"' + message.text + '","' +
+                          result[0][0] + '","' + str(result[1][0]) + '"')
 
-    
-
-    con=sql.connect("questions.db")
-    cur=con.cursor()
-    cur.execute("insert into questions(question,answer) values (?,?)",(message.text,result[0][0]))
+    con = sql.connect("questions.db")
+    cur = con.cursor()
+    cur.execute("insert into questions(question,answer,score) values (?,?,?)",
+                (message.text, result[0][0], float(result[1][0])))
     con.commit()
     print('"' + message.text + '","' + result[0][0] + '"')
     print("saved")
